@@ -5,20 +5,21 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home";
-import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Posts from "./pages/Posts";
 import Post from "./pages/Post";
+
+import Galleries from "./pages/Galleries";
+import Gallery  from "./pages/Gallery";
 
 // Components
 import Navbar from "./components/Navbar";
 
 
-// Page d'accueil avec 5 articles (/)
-// Page des articles avec TOUS les articles (/posts)
-// Page de contact avec un petit formulaire
-// Stylisez ça avec Bulma
-
+// Remplacer mes services par une galerie
+// Page /galeries -> afficher tous les albums
+// Page /galeries/{id} -> affiche les images
+// d'un album en particulier
 
 class App extends Component {
   state = {
@@ -35,10 +36,12 @@ class App extends Component {
 
         <Route exact path="/posts" component={Posts} />
         <Route path="/posts/:id" component={Post} />
-
-        <Route path="/services" component={Services} />
         
         <Route path="/contact" component={Contact} />
+
+        <Route exact path="/galeries" component={Galleries} />
+        <Route path="/galeries/:id" component={Gallery} />
+
       </Router>
     );
   }

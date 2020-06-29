@@ -25,8 +25,8 @@ class Navbar extends Component {
         Home
       </NavLink>
 
-      <NavLink to="/services" className="navbar-item" activeClassName="is-active">
-        Mes services
+      <NavLink to="/galeries" className="navbar-item" activeClassName="is-active">
+        Ma galerie
       </NavLink>
 
       <NavLink to="/posts" className="navbar-item" activeClassName="is-active">

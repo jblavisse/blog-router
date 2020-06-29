@@ -31,7 +31,7 @@ class Posts extends Component {
         <div className="posts container">
             <h1 className="title is-1">Mes articles</h1>
             <div className="columns is-multiline">
-              {postsList}
+              {postsList.length > 0 ? postsList: "En chargement..."}
             </div>
         </div> );
     }

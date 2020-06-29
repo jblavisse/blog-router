@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Posts from "./pages/Posts";
+import Post from "./pages/Post";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -31,8 +32,12 @@ class App extends Component {
         </div>
   
         <Route exact path="/" component={Home} />
-        <Route path="/posts" component={Posts} />
+
+        <Route exact path="/posts" component={Posts} />
+        <Route path="/posts/:id" component={Post} />
+
         <Route path="/services" component={Services} />
+        
         <Route path="/contact" component={Contact} />
       </Router>
     );

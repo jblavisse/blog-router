@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./Posts.css";
+import {Link} from "react-router-dom";
 
 class Posts extends Component {
     state = {
@@ -18,16 +20,18 @@ class Posts extends Component {
     render() { 
         let postsList = this.state.posts
         .map(post => {
-          return <article className="post">
-              <h2>{post.title}</h2>
+          return <article className="post column is-one-third">
+              <Link to="/posts/3"><h2 className="post__title">{post.title}</h2></Link>
               <p>{post.body}</p>
           </article>
         })
 
         return ( 
-        <div className="posts">
-            <h1>Mes articles</h1>
-            {postsList}
+        <div className="posts container">
+            <h1 className="title is-1">Mes articles</h1>
+            <div className="columns is-multiline">
+              {postsList}
+            </div>
         </div> );
     }
 }

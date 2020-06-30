@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home";
@@ -32,16 +32,17 @@ class App extends Component {
           <Navbar/>
         </div>
   
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route exact path="/" component={Home} />
 
-        <Route exact path="/posts" component={Posts} />
-        <Route path="/posts/:id" component={Post} />
-        
-        <Route path="/contact" component={Contact} />
+          <Route exact path="/posts" component={Posts} />
+          <Route path="/posts/:id" component={Post} />
+          
+          <Route path="/contact" component={Contact} />
 
-        <Route exact path="/galeries" component={Galleries} />
-        <Route path="/galeries/:id" component={Gallery} />
-
+          <Route exact path="/galeries" component={Galleries} />
+          <Route path="/galeries/:id" component={Gallery} />
+      </Switch>
       </Router>
     );
   }
